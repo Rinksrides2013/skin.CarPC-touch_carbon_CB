@@ -122,7 +122,7 @@
 			<fadetime>600</fadetime>
 		</control>
 		<control type="group">
-            <left>365</left>
+			<left>365</left>
             <top>50</top>
 			<width>550</width>
             <height>550</height>
@@ -130,7 +130,7 @@
             <control type="label">
                 <visible>true</visible>
                 <left>150</left>
-				<top>165</top>
+				<top>145</top>
                 <width>250</width>
                 <height>100</height>
                 <font>font13</font>
@@ -145,9 +145,9 @@
             </control>
             <control type="label">
                 <visible>true</visible>
-                <left>150</left>
-				<top>140</top>
-                <width>250</width>
+                <left>130</left>
+				<top>170</top>
+                <width>290</width>
                 <height>100</height>
                 <font>font13_title</font>
                 <textcolor>white</textcolor>
@@ -161,7 +161,7 @@
             </control>
 			<control type="label">
 				<visible>true</visible>
-				<left>120</left>
+				<left>110</left>
 				<top>455</top>
                 <width>250</width>
                 <height>100</height>
@@ -170,7 +170,7 @@
                 <selectedcolor>selected</selectedcolor>
                 <align>center</align>
 				<label>[1]</label>
-				<info>musicplayer.time</info>
+				<info>MusicPlayer.Time</info>
 				<visible>Player.HasAudio + Window.IsVisible(home)</visible>
 			</control>
 			<control type="label">
@@ -188,7 +188,7 @@
 			</control>
 			<control type="label">
 				<visible>true</visible>
-				<left>180</left>
+				<left>190</left>
 				<top>455</top>
                 <width>250</width>
                 <height>100</height>
@@ -197,8 +197,56 @@
                 <selectedcolor>selected</selectedcolor>
                 <align>center</align>
 				<label>[1]</label>
-				<info>musicplayer.duration</info>
+				<info>MusicPlayer.Duration</info>
 				<visible>Player.HasAudio + Window.IsVisible(home)</visible>
+			</control>
+			<control type="label">
+				<description>Info Label Random</description>
+				<visible>true</visible>
+				<left>120</left>
+				<top>390</top>
+                <width>75</width>
+                <height>100</height>
+				<font>font11</font>
+				<textcolor>white</textcolor>
+				<label>Random</label>
+			</control>
+			<control type="label">
+				<description>Random Status</description>
+				<visible>true</visible>
+				<left>135</left>
+				<top>410</top>
+                <width>75</width>
+                <height>100</height>
+				<font>font11</font>
+				<textcolor>white</textcolor>
+				<label>Random</label>
+				<info>Playlist.Random</info>
+			</control>
+			<control type="label">
+				<description>Info Label Repeat</description>
+				<visible>true</visible>
+				<align>right</align>
+				<left>350</left>
+				<top>390</top>
+                <width>75</width>
+                <height>100</height>
+				<font>font11</font>
+				<textcolor>white</textcolor>
+				<label>Repeat</label>
+			</control>
+			<control type="label">
+				<description>Repeat Status</description>
+				<visible>true</visible>
+				<align>right</align>
+				<left>338</left>
+				<top>410</top>
+                <width>75</width>
+                <height>100</height>
+				<font>font11</font>
+				<textcolor>white</textcolor>
+				<label>Repeat</label>
+				<info>Playlist.Repeat</info>
 			</control>
         </control>
 		  
@@ -332,40 +380,33 @@
 		<control type="panel" id="9002">
 			<include>SubMenuCommonLayout</include>
 			<content>
-				<!--<item>
+				<item>
 					<label></label>
-					<onclick>RunScript("special://skin/scripts/system_poweroff.py")</onclick>
-					<icon>icon_shutdown_w.png</icon>
-				</item>-->
-				<!--<item>
+					<onclick>XBMC.PlayerControl(Random)</onclick>
+					<icon>special://skin/media/icons/random_icon.png</icon>
+					<visible>Player.HasAudio + Window.IsVisible(home)</visible>
+				</item>
+				<item>
 					<label></label>
-					<onclick>ReloadSkin</onclick>
-					<icon>icon_refresh_w.png</icon>
-				</item>-->
-				<!--<item>
-					<label></label>
-					<onclick>ActivateWindow(Favourites)</onclick>
-					<icon>icon_favourites_w.png</icon>
-				</item>-->
-				<!--<item>
-					<label></label>
-					<onclick>ActivateWindow(Settings)</onclick>
-					<icon>icon_settings_w.png</icon>
-				</item>-->
+					<onclick>XBMC.PlayerControl(Repeat)</onclick>
+					<icon>special://skin/media/icons/repeat_icon.png</icon>
+					<visible>Player.HasAudio + Window.IsVisible(home)</visible>
+				</item>
 				<item>
 					<label></label>
 					<onclick>XBMC.ReloadSkin()</onclick>
-					<icon>special://skin/media/reloadskin_icon.png</icon>
+					<icon>special://skin/media/icons/reloadskin_icon.png</icon>
 				</item>
 				<item>
 					<label></label>
 					<onclick>ActivateWindow(Settings)</onclick>
-					<icon>special://skin/media/settings_icon.png</icon>
+					<icon>special://skin/media/icons/settings_icon.png</icon>
 				</item>
 				<item>
 					<label></label>
 					<onclick>RunScript("special://skin/scripts/system_reboot.py")</onclick>
-					<icon>special://skin/media/reboot_icon.png</icon>
+					<icon>special://skin/media/icons/reboot_icon.png</icon>
+					<visible>!Player.HasAudio + Window.IsVisible(home)</visible>
 				</item>
 			</content>
 		</control>		
