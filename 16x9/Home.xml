@@ -121,6 +121,18 @@
 			<visible>Player.HasAudio + Window.IsVisible(home)</visible>
 			<fadetime>600</fadetime>
 		</control>
+		<!--<control type="image" id="2">
+			<description>album cover</description>
+			<include>Window_OpenClose_Animation_Zoom</include>
+			<left>555</left>
+			<top>260</top>
+			<width>170</width>
+			<height>170</height>
+			<visible>Player.HasAudio + Window.IsVisible(home) + !IsEmpty(MusicPlayer.Cover)</visible>
+			<fadetime>600</fadetime>
+			<texture>$INFO[MusicPlayer.Cover]</texture>
+			<aspectratio>keep</aspectratio>
+		</control>-->
 		<control type="group">
 			<left>365</left>
             <top>50</top>
@@ -392,11 +404,11 @@
 					<icon>special://skin/media/icons/repeat_icon.png</icon>
 					<visible>Player.HasAudio + Window.IsVisible(home)</visible>
 				</item>
-				<item>
+				<!--<item>
 					<label></label>
 					<onclick>XBMC.ReloadSkin()</onclick>
 					<icon>special://skin/media/icons/reloadskin_icon.png</icon>
-				</item>
+				</item>-->
 				<item>
 					<label></label>
 					<onclick>ActivateWindow(Settings)</onclick>
