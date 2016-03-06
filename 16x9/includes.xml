@@ -306,7 +306,7 @@
 			</control>
 			<control type="label">
 				<description>Radio label</description>
-				<posx>122</posx>
+				<posx>102</posx>
 				<posy>22</posy>
 				<height>90</height>
 				<width>250</width>

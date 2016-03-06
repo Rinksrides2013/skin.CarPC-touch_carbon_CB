@@ -14,7 +14,34 @@
 		</control>
 		
 		<include>CommonTopBar</include>		
-		<include>XbmcLogo</include>
+		<!--<include>XbmcLogo</include>-->
+		
+		<control type="group">
+		<include>Window_OpenClose_Animation_Zoom</include>
+			<posx>5</posx>
+			<posy>5</posy>
+			<control type="button">
+				<description>Displayhelligkeit hoch</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>64</width>
+				<height>64</height>				
+				<texturenofocus>special://skin/media/icons/display_hell.png</texturenofocus>
+				<texturefocus border="5">special://skin/media/icons/display_hell.png</texturefocus>
+				<onclick>RunScript("special://skin/scripts/display_hell.py")</onclick>
+			</control>
+			<control type="button">
+				<description>Displayhelligkeit niedrig</description>
+				<posx>79</posx>
+				<posy>8</posy>
+				<width>48</width>
+				<height>48</height>				
+				<texturenofocus>special://skin/media/icons/display_dunkel.png</texturenofocus>
+				<texturefocus border="5">special://skin/media/icons/display_dunkel.png</texturefocus>
+				<onclick>RunScript("special://skin/scripts/display_dunkel.py")</onclick>
+			</control>
+		</control>
+		
 		<include>Time</include>
 		<include>Weather</include>
 		<include>Logob</include>
@@ -34,7 +61,7 @@
 				<height>130</height>				
 				<texturenofocus>home_1.png</texturenofocus>
 				<texturefocus border="5">home_1_p.png</texturefocus>
-				<onclick>ActivateWindow(Videos,/home/pi/video)</onclick>
+				<onclick>ActivateWindow(Videos,/home/pi/Videos)</onclick>
 			</control>
 			
 			<control type="image">
@@ -47,7 +74,7 @@
 			</control>
 			<control type="label">
 				<description>Video label</description>
-				<posx>172</posx>
+				<posx>122</posx>
 				<posy>22</posy>
 				<height>90</height>
 				<width>200</width>
@@ -94,8 +121,7 @@
 			<posy>147</posy>
 			<width>400</width>
 			<height>400</height>
-			<aspectratio>scale</aspectratio>
-			<texture>logo.png</texture>
+			<texture>special://skin/media/raspi-logo.png</texture>
 			<visible>!Player.HasAudio + ![Skin.HasSetting(UseCustomLogo) + !IsEmpty(Skin.String(CustomLogoPath))]</visible>
 			<include>Window_OpenClose_Animation_Zoom</include>
 		</control>
@@ -106,7 +132,6 @@
 			<posy>147</posy>
 			<width>400</width>
 			<height>400</height>
-			<aspectratio>scale</aspectratio>
 			<texture>$INFO[Skin.String(CustomLogoPath)]</texture>
 			<visible>!Player.HasAudio + Skin.HasSetting(UseCustomLogo) + !IsEmpty(Skin.String(CustomLogoPath))</visible>
 			<include>Window_OpenClose_Animation_Zoom</include>
@@ -277,7 +302,7 @@
 				<font>-</font>
 				<texturenofocus >home_4.png</texturenofocus>
 				<texturefocus border="5">home_4_p.png</texturefocus>
-				<onclick>ActivateWindow(Music,/home/pi/musik)</onclick>
+				<onclick>ActivateWindow(Music,/home/pi/Musik)</onclick>
 			</control>
 			<control type="image">
 				<description>Music Button Image</description>
@@ -289,7 +314,7 @@
 			</control>
 			<control type="label">
 				<description>Music label</description>
-				<posx>170</posx>
+				<posx>210</posx>
 				<posy>22</posy>
 				<height>90</height>
 				<width>250</width>
@@ -404,11 +429,11 @@
 					<icon>special://skin/media/icons/repeat_icon.png</icon>
 					<visible>Player.HasAudio + Window.IsVisible(home)</visible>
 				</item>
-				<!--<item>
+				<item>
 					<label></label>
 					<onclick>XBMC.ReloadSkin()</onclick>
 					<icon>special://skin/media/icons/reloadskin_icon.png</icon>
-				</item>-->
+				</item>
 				<item>
 					<label></label>
 					<onclick>ActivateWindow(Settings)</onclick>

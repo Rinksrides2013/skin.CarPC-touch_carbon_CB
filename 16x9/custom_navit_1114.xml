@@ -8,7 +8,7 @@
         </control>
 
         <!-- Bottom bar background(same transparency as Navit skin) -->
-        <control type="group">
+        <!--<control type="group">
             <include>Window_OpenClose_Animation_Slide_Up</include>
             <control type="image">
 				<posx>0</posx>
@@ -18,14 +18,14 @@
 				<texture>black.png</texture>
 				<colordiffuse>99000000</colordiffuse>
 			</control>
-        </control>
+        </control>-->
 
         <!-- Bottom bar song/radio info -->
-        <control type="group">
+        <!--<control type="group">
             <posy>50r</posy>
             <include>MusicPlayerTitle</include>
             <include>RadioStationName</include>
-        </control> 
+        </control>-->
 
 	</controls>
 </window>
