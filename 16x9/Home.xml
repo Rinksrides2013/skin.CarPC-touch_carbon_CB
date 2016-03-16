@@ -18,7 +18,7 @@
 		
 		<control type="group">
 		<include>Window_OpenClose_Animation_Zoom</include>
-			<posx>5</posx>
+			<posx>10</posx>
 			<posy>5</posy>
 			<control type="button">
 				<description>Displayhelligkeit hoch</description>
@@ -28,17 +28,7 @@
 				<height>64</height>				
 				<texturenofocus>special://skin/media/icons/display_hell.png</texturenofocus>
 				<texturefocus border="5">special://skin/media/icons/display_hell.png</texturefocus>
-				<onclick>RunScript("special://skin/scripts/display_hell.py")</onclick>
-			</control>
-			<control type="button">
-				<description>Displayhelligkeit niedrig</description>
-				<posx>79</posx>
-				<posy>8</posy>
-				<width>48</width>
-				<height>48</height>				
-				<texturenofocus>special://skin/media/icons/display_dunkel.png</texturenofocus>
-				<texturefocus border="5">special://skin/media/icons/display_dunkel.png</texturefocus>
-				<onclick>RunScript("special://skin/scripts/display_dunkel.py")</onclick>
+				<onclick>RunScript("special://skin/scripts/brightness.py")</onclick>
 			</control>
 		</control>
 		
@@ -429,11 +419,11 @@
 					<icon>special://skin/media/icons/repeat_icon.png</icon>
 					<visible>Player.HasAudio + Window.IsVisible(home)</visible>
 				</item>
-				<item>
+				<!--<item>
 					<label></label>
 					<onclick>XBMC.ReloadSkin()</onclick>
 					<icon>special://skin/media/icons/reloadskin_icon.png</icon>
-				</item>
+				</item>-->
 				<item>
 					<label></label>
 					<onclick>ActivateWindow(Settings)</onclick>
